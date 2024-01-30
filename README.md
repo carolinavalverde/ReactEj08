@@ -12,7 +12,7 @@ Este proyecto es una aplicación web que permite cargar y mostrar datos personal
 
 ## 3. Despliegue
 
-La aplicación ColorPalette está desplegada y disponible en: 
+La aplicación está desplegada y disponible en: 
 https://formulariodatospersonales.netlify.app/
 
 ## 4. Tecnologías Utilizadas
@@ -47,4 +47,5 @@ Carolina Valverde Vasile
 Este proyecto no cuenta con licencia.
 
 ¡Esperamos que disfrutes trabajando con este formulario de carga de datos personales construida con React y Bootstrap! Si tienes alguna pregunta o problema, no dudes en crear un problema en el repositorio.
+
 # ReactEj08
