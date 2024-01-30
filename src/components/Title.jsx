@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Title = () => {
   return (
-    <div style={{ background: '#f8d7da', padding: '10px', marginBottom: '20px' }}>
-      <h2>Formulario</h2>
+    <div>
+      <h2>Formulario de Datos Personales</h2>
     </div>
   );
 };

@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Swal from "sweetalert2";
 
 const Formulario = () => {
   const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    dni: '',
-    email: '',
+    nombre: "",
+    apellido: "",
+    dni: "",
+    email: "",
   });
 
   const handleChange = (e) => {
@@ -18,42 +19,67 @@ const Formulario = () => {
     const { nombre, apellido, dni, email } = formData;
 
     if (nombre && apellido && dni && email) {
-      // Guardar en el local storage (puedes ajustar según tus necesidades)
-      localStorage.setItem('userData', JSON.stringify(formData));
+      localStorage.setItem("userData", JSON.stringify(formData));
 
-      // Mostrar alerta de datos enviados
-      Swal.fire('Datos enviados', '', 'success');
+      Swal.fire("Datos enviados", "", "success");
     } else {
-      // Mostrar alerta de completar todos los datos
-      Swal.fire('Completar todos los datos', '', 'error');
+      Swal.fire("Completar todos los datos", "", "error");
     }
   };
 
   return (
     <Form>
       <Form.Group controlId="nombre">
-        <Form.Label>Nombre</Form.Label>
-        <Form.Control type="text" name="nombre" onChange={handleChange} />
+        <Form.Label className="form-label">Nombre</Form.Label>
+        <Form.Control
+          className="form-control"
+          type="text"
+          name="nombre"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="apellido">
-        <Form.Label>Apellido</Form.Label>
-        <Form.Control type="text" name="apellido" onChange={handleChange} />
+        <Form.Label className="form-label">Apellido</Form.Label>
+        <Form.Control
+          className="form-control"
+          type="text"
+          name="apellido"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="dni">
-        <Form.Label>DNI</Form.Label>
-        <Form.Control type="text" name="dni" onChange={handleChange} />
+        <Form.Label className="form-label">DNI</Form.Label>
+        <Form.Control
+          className="form-control"
+          type="text"
+          name="dni"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="email">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" name="email" onChange={handleChange} />
+        <Form.Label className="form-label">Email</Form.Label>
+        <Form.Control
+          className="form-control"
+          type="email"
+          name="email"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
-
-      <Button variant="primary" onClick={handleSubmit}>
-        Enviar
-      </Button>
+      <div className="d-flex justify-content-center">
+        <Button
+          className="btn btn-warning my-3 fw-bold text-white"
+          onClick={handleSubmit}
+        >
+          Enviar
+        </Button>
+      </div>
     </Form>
   );
 };
